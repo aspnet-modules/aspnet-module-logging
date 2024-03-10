@@ -1,5 +1,6 @@
 using AspNet.Module.Logging;
 using AspNet.Module.Host;
+using AspNet.Module.Logging.Extensions;
 using AspNet.Module.Logging.Sample;
 
 var builder = AspNetWebApplication.CreateBuilder(args);
