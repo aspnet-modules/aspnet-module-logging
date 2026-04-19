@@ -1,25 +1,25 @@
-# Модуль логирования
+# AspNet.Module.Logging
 
-Модуль замены стандартного логгера на [Serilog](https://serilog.net/)
+Logging module that replaces the default ASP.NET logger with [Serilog](https://serilog.net/).
+
+## Installation
 
 ```sh
-dotnet add AspNet.Module.Logging
+dotnet add package AspNet.Module.Logging
 ```
 
-## Конфигурация
+## Configuration
 
-Настройка логирования через appsettings.json или переменные окружения.
-
-> Настройка [Serilog](https://github.com/serilog/serilog-settings-configuration) через appsettings.json
+Logging can be configured through `appsettings.json` or environment variables.
 
 ```json
 {
   "Serilog": {
     "MinimumLevel": "Verbose",
-    "ServiceName": "Название сервиса для Elastic",
+    "ServiceName": "Service name for Elastic",
     "Sinks": {
       "Elasticsearch": {
-        "Url": "УРЛ к Elastic",
+        "Url": "Elastic URL",
         "TemplateVersion": 7
       }
     }
@@ -27,9 +27,7 @@ dotnet add AspNet.Module.Logging
 }
 ```
 
-## Регистрация модуля
-
-Добавляем в Host проект nuget пакет `AspNet.Module.Logging`.
+## Module Registration
 
 ```cs
 using AspNet.Module.Logging;
@@ -37,10 +35,10 @@ using AspNet.Module.Logging;
 var builder = AspNetWebApplication.CreateBuilder(args);
 builder.RegisterModule<LoggingModule>();
 
-...
 var app = builder.Build();
-...
 await app.RunWithLogging();
 ```
 
+## Source Code
 
+- Repository: [github.com/aspnet-modules/aspnet-module-logging](https://github.com/aspnet-modules/aspnet-module-logging)

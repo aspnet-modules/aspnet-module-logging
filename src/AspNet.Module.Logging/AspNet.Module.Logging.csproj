@@ -12,20 +12,31 @@
         <IsPackable>true</IsPackable>
         <IncludeSymbols>true</IncludeSymbols>
         <PackageId>AspNet.Module.Logging</PackageId>
-        <Version>3.0.0</Version>
+        <Version>3.0.1</Version>
         <Authors>kvandake</Authors>
         <Company>kvandake</Company>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageProjectUrl>https://github.com/aspnet-modules/aspnet-module-logging</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/aspnet-modules/aspnet-module-logging</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AspNet.Module.Common" Version="3.0.0" />
-        <PackageReference Include="AspNet.Module.Host" Version="3.0.0" />
+        <PackageReference Include="AspNet.Module.Common" Version="3.0.2" />
+        <PackageReference Include="AspNet.Module.Host" Version="3.0.1" />
         <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
         <PackageReference Include="Serilog.Enrichers.AssemblyName" Version="2.0.0"/>
         <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
         <PackageReference Include="Serilog.Formatting.OpenSearch" Version="1.3.0" />
         <PackageReference Include="Serilog.Settings.Configuration" Version="10.0.0" />
         <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="/">
+            <Link>README.md</Link>
+        </None>
     </ItemGroup>
 
 </Project>
